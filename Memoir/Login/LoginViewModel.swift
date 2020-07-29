@@ -21,10 +21,19 @@ class LoginViewModel: ObservableObject {
     func loginUser(email: String, password: String) {
         cancellable = service.loginUser(email: email, password: password).sink(receiveCompletion: { (error) in
             print(error)
-        }) { (result) in
-            print(result)
-            self.loginModel = result
-        }
+        }, receiveValue: { (result) in
+            switch result {
+            case let .failure(error):
+                print(error)
+            case let .success(model):
+                print("Success \(model)")
+                self.loginModel = model
+            }
+        })
+    }
+    
+    func viewDidLoad() {
+        
     }
 }
 

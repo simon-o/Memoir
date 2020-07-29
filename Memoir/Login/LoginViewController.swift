@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordButton: UIButton!
     
+    @IBOutlet weak var label: UILabel!
     
     private var viewModel = LoginViewModel()
     
@@ -25,10 +26,15 @@ class LoginViewController: UIViewController {
         //MARK: DEBUG
         emailTextfield.text = "antoine.simon.epitech@gmail.com"
         passwordTextfield.text = "aseax45632memoir"
+        
+        _ = viewModel.$loginModel.receive(on: DispatchQueue.main)
+            .map {$0?.Id}
+            .assign(to: \.text, on: label)
     }
     
     @IBAction func LoginPressed(_ sender: Any) {
         viewModel.loginUser(email: emailTextfield.text ?? "", password: passwordTextfield.text ?? "")
+         
     }
     
     @IBAction func PasswordForgottenPressed(_ sender: Any) {

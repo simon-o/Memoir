@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Memoir" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextfield" destination="hDD-cZ-0HT" id="Zp5-u4-ydI"/>
+                <outlet property="label" destination="F8X-L8-jIx" id="rHI-JF-BHm"/>
                 <outlet property="loginButton" destination="88r-OO-EHU" id="lnS-La-WbG"/>
                 <outlet property="passwordButton" destination="lQ5-ua-0Jd" id="zIB-3Y-iQ9"/>
                 <outlet property="passwordTextfield" destination="fXL-cf-wUe" id="i8k-mR-5gc"/>
@@ -45,11 +46,20 @@
                         <action selector="LoginPressed:" destination="-1" eventType="touchUpInside" id="PF8-fO-nTM"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8X-L8-jIx">
+                    <rect key="frame" x="20" y="368" width="374" height="21"/>
+                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fXL-cf-wUe" secondAttribute="trailing" constant="15" id="1XU-bs-RXa"/>
+                <constraint firstItem="F8X-L8-jIx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="4cO-Em-x8l"/>
                 <constraint firstItem="hDD-cZ-0HT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="DPy-j2-9js"/>
+                <constraint firstItem="F8X-L8-jIx" firstAttribute="top" secondItem="88r-OO-EHU" secondAttribute="bottom" constant="16" id="Dla-l0-DX8"/>
                 <constraint firstItem="88r-OO-EHU" firstAttribute="centerX" secondItem="fXL-cf-wUe" secondAttribute="centerX" id="KNh-BI-ZrR"/>
                 <constraint firstItem="fXL-cf-wUe" firstAttribute="top" secondItem="hDD-cZ-0HT" secondAttribute="bottom" constant="30" id="MXV-HF-r9F"/>
                 <constraint firstItem="88r-OO-EHU" firstAttribute="top" secondItem="fXL-cf-wUe" secondAttribute="bottom" constant="30" id="OcI-BG-hn1"/>
@@ -58,6 +68,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hDD-cZ-0HT" secondAttribute="trailing" constant="15" id="XkT-tq-YID"/>
                 <constraint firstItem="hDD-cZ-0HT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="kO0-xb-9wD"/>
                 <constraint firstItem="fXL-cf-wUe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="vgZ-Cm-JUp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="F8X-L8-jIx" secondAttribute="trailing" constant="20" id="wfl-Da-41b"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="-57" y="136"/>
