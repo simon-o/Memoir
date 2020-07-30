@@ -25,7 +25,7 @@ class LoginService: LoginServiceProtocol {
                 if let decoded = try? JSONDecoder().decode(LoginModel.self, from: data) {
                     return .success(decoded)
                 }
-                //-- MARK: Need to be replaced with data to send the error message
+                // MARK: Need to be replaced with data to send the error message
                 return .failure(.unknown(response))
         }
         .receive(on: DispatchQueue.main)
