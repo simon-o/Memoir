@@ -11,10 +11,10 @@ import Combine
 
 class ScanQRViewModel {
     func getGuestButtonTitle() -> String {
-        return "Login as a Guest"
+        return "scan_guest_button".localizedString
     }
     
     func getWedButtonTitle() -> String {
-        return "Login as a newly Wed"
+        return "scan_wed_button".localizedString
     }
 }

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Memoir
+
+  Created by Antoine Simon on 30/07/2020.
+  Copyright © 2020 Antoine Simon. All rights reserved.
+*/
+
+// MARK: - SCAN QR
+"scan_guest_button" = "Login as a Guest";
+"scan_wed_button" = "Login as a newly Wed";
