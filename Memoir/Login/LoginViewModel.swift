@@ -9,14 +9,14 @@
 import Foundation
 import Combine
 
-protocol LoginViewModelProtocol {
-    
-}
-
 class LoginViewModel: ObservableObject {
-    private let service: LoginServiceProtocol = LoginService()
+    private let service: LoginServiceProtocol
     var cancellable: AnyCancellable?
     @Published var loginModel: LoginModel?
+    
+    init(service: LoginServiceProtocol = LoginService()) {
+        self.service = service
+    }
     
     func loginUser(email: String, password: String) {
         cancellable = service.loginUser(email: email, password: password).sink(receiveCompletion: { (error) in
@@ -31,12 +31,4 @@ class LoginViewModel: ObservableObject {
             }
         })
     }
-    
-    func viewDidLoad() {
-        
-    }
-}
-
-extension LoginViewModel: LoginViewModelProtocol {
-    
 }

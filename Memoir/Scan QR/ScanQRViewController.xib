@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScanQRViewController" customModule="Memoir" customModuleProvider="target">
+            <connections>
+                <outlet property="loginGuestButton" destination="91E-G3-gLn" id="pjH-F0-h0u"/>
+                <outlet property="loginWedButton" destination="SpH-bj-alE" id="tnL-Je-MoC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Noq-rR-W3A">
+                    <rect key="frame" x="80" y="84" width="254" height="200"/>
+                    <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="7J3-9A-Gql"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91E-G3-gLn">
+                    <rect key="frame" x="184" y="334" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="LoginGuestPressed:" destination="-1" eventType="touchUpInside" id="ICs-RF-WmG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpH-bj-alE">
+                    <rect key="frame" x="184" y="394" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="LoginWedPressed:" destination="-1" eventType="touchUpInside" id="taB-3H-rxX"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="Noq-rR-W3A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="1Qo-ia-fp0"/>
+                <constraint firstItem="SpH-bj-alE" firstAttribute="top" secondItem="91E-G3-gLn" secondAttribute="bottom" constant="30" id="G3C-8X-iKD"/>
+                <constraint firstItem="91E-G3-gLn" firstAttribute="top" secondItem="Noq-rR-W3A" secondAttribute="bottom" constant="50" id="QU9-DT-X6v"/>
+                <constraint firstItem="SpH-bj-alE" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Tcs-GZ-40j"/>
+                <constraint firstItem="Noq-rR-W3A" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="eoA-XB-YmK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Noq-rR-W3A" secondAttribute="trailing" constant="80" id="l4y-Vo-M9p"/>
+                <constraint firstItem="91E-G3-gLn" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="pDe-pN-8jd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="84"/>
+        </view>
+    </objects>
+</document>

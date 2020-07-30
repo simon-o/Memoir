@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6402DEC24D3597B00128B04 /* ScanQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6402DEA24D3597B00128B04 /* ScanQRViewController.swift */; };
+		D6402DED24D3597B00128B04 /* ScanQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6402DEB24D3597B00128B04 /* ScanQRViewController.xib */; };
+		D6402DF024D35A0400128B04 /* ScanQRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6402DEF24D35A0400128B04 /* ScanQRViewModel.swift */; };
 		D66309E424C878EB00D10AC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66309E324C878EB00D10AC1 /* AppDelegate.swift */; };
 		D66309E624C878EB00D10AC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66309E524C878EB00D10AC1 /* SceneDelegate.swift */; };
 		D66309ED24C878EC00D10AC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66309EC24C878EC00D10AC1 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D6402DEA24D3597B00128B04 /* ScanQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRViewController.swift; sourceTree = "<group>"; };
+		D6402DEB24D3597B00128B04 /* ScanQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanQRViewController.xib; sourceTree = "<group>"; };
+		D6402DEF24D35A0400128B04 /* ScanQRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRViewModel.swift; sourceTree = "<group>"; };
 		D66309E024C878EB00D10AC1 /* Memoir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memoir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66309E324C878EB00D10AC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D66309E524C878EB00D10AC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +90,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D6402DEE24D359ED00128B04 /* Scan QR */ = {
+			isa = PBXGroup;
+			children = (
+				D6402DEA24D3597B00128B04 /* ScanQRViewController.swift */,
+				D6402DEF24D35A0400128B04 /* ScanQRViewModel.swift */,
+				D6402DEB24D3597B00128B04 /* ScanQRViewController.xib */,
+			);
+			path = "Scan QR";
+			sourceTree = "<group>";
+		};
 		D66309D724C878EB00D10AC1 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +126,7 @@
 				D66309E324C878EB00D10AC1 /* AppDelegate.swift */,
 				D66309E524C878EB00D10AC1 /* SceneDelegate.swift */,
 				D6ABB61724C8A37E00C15B85 /* UrlFactory.swift */,
+				D6402DEE24D359ED00128B04 /* Scan QR */,
 				D6630A1724C87A5C00D10AC1 /* Login */,
 				D66309EC24C878EC00D10AC1 /* Assets.xcassets */,
 				D66309EE24C878EC00D10AC1 /* LaunchScreen.storyboard */,
@@ -252,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6402DED24D3597B00128B04 /* ScanQRViewController.xib in Resources */,
 				D66309F024C878EC00D10AC1 /* LaunchScreen.storyboard in Resources */,
 				D66309ED24C878EC00D10AC1 /* Assets.xcassets in Resources */,
 				D6630A1624C879D100D10AC1 /* LoginViewController.xib in Resources */,
@@ -283,7 +301,9 @@
 				D6ABB61824C8A37E00C15B85 /* UrlFactory.swift in Sources */,
 				D6630A1D24C8853600D10AC1 /* LoginModel.swift in Sources */,
 				D6630A1924C87BD800D10AC1 /* LoginViewModel.swift in Sources */,
+				D6402DEC24D3597B00128B04 /* ScanQRViewController.swift in Sources */,
 				D6630A1524C879D100D10AC1 /* LoginViewController.swift in Sources */,
+				D6402DF024D35A0400128B04 /* ScanQRViewModel.swift in Sources */,
 				D66309E424C878EB00D10AC1 /* AppDelegate.swift in Sources */,
 				D66309E624C878EB00D10AC1 /* SceneDelegate.swift in Sources */,
 			);
