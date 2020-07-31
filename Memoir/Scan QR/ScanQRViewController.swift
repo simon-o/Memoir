@@ -27,7 +27,7 @@ class ScanQRViewController: UIViewController {
     }
     
     @IBAction func LoginGuestPressed(_ sender: Any) {
-//        navigationController?.pushViewController(LoginViewController(), animated: true)
+        navigationController?.pushViewController(LoginGuestViewController(), animated: true)
     }
     
     @IBAction func LoginWedPressed(_ sender: Any) {

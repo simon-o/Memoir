@@ -9,3 +9,6 @@
 // MARK: - SCAN QR
 "scan_guest_button" = "Connexion invite";
 "scan_wed_button" = "COnnexion marie";
+
+// MARK: - Login Guest
+"login_guest_enter_button" = "Entrer dans la room";

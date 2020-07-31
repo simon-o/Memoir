@@ -15,17 +15,25 @@ enum typeUrl: String {
 
 enum apiPath: String {
     case login = "users/authenticate"
+    case room = "rooms/%@"
 }
 
 struct UrlFactory {
     private let baseUrl = "https://memoir.jracaud.com/api/"
-    func makeURL<T>(type: typeUrl, apiPath: apiPath, parameters: T) -> URLRequest where T : Encodable{
+    func makeURL<T>(type: typeUrl, apiPath: apiPath, parameters: T?) -> URLRequest where T : Encodable{
          
-        var request = URLRequest(url: URL(string: baseUrl + apiPath.rawValue)!)
+        return makeURL(type: type, apiPath: apiPath.rawValue, parameters: parameters)
+    }
+    
+    func makeURL<T>(type: typeUrl, apiPath: String, parameters: T?) -> URLRequest where T : Encodable{
+         
+        var request = URLRequest(url: URL(string: baseUrl + apiPath)!)
         request.httpMethod = type.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try! JSONEncoder().encode(parameters)
+        if type != .get {
+            request.httpBody = try! JSONEncoder().encode(parameters)
+        }
         return request
     }
 }

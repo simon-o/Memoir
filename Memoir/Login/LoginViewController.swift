@@ -29,8 +29,8 @@ class LoginViewController: UIViewController {
         passwordTextfield.text = "aseax45632memoir"
         
         cancellable = viewModel.$loginModel.receive(on: DispatchQueue.main)
-        .map {$0?.Id}
-        .assign(to: \.text, on: label)
+            .map {$0?.Id}
+            .assign(to: \.text, on: label)
     }
     
     @IBAction func LoginPressed(_ sender: Any) {

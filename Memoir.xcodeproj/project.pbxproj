@@ -24,6 +24,11 @@
 		D6ABB61824C8A37E00C15B85 /* UrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ABB61724C8A37E00C15B85 /* UrlFactory.swift */; };
 		D6ADD45B24D36AA00028A82D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D6ADD45D24D36AA00028A82D /* Localizable.strings */; };
 		D6ADD46024D36B480028A82D /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ADD45F24D36B480028A82D /* Tools.swift */; };
+		D6ADD46424D416D40028A82D /* LoginGuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ADD46224D416D40028A82D /* LoginGuestViewController.swift */; };
+		D6ADD46524D416D40028A82D /* LoginGuestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6ADD46324D416D40028A82D /* LoginGuestViewController.xib */; };
+		D6ADD46824D41A7F0028A82D /* LoginGuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ADD46724D41A7F0028A82D /* LoginGuestViewModel.swift */; };
+		D6ADD46A24D41E9F0028A82D /* LoginGuestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ADD46924D41E9F0028A82D /* LoginGuestService.swift */; };
+		D6ADD46C24D421FB0028A82D /* LoginGuestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ADD46B24D421FB0028A82D /* LoginGuestModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,11 @@
 		D6ADD45C24D36AA00028A82D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D6ADD45E24D36AD20028A82D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D6ADD45F24D36B480028A82D /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		D6ADD46224D416D40028A82D /* LoginGuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginGuestViewController.swift; sourceTree = "<group>"; };
+		D6ADD46324D416D40028A82D /* LoginGuestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginGuestViewController.xib; sourceTree = "<group>"; };
+		D6ADD46724D41A7F0028A82D /* LoginGuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginGuestViewModel.swift; sourceTree = "<group>"; };
+		D6ADD46924D41E9F0028A82D /* LoginGuestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginGuestService.swift; sourceTree = "<group>"; };
+		D6ADD46B24D421FB0028A82D /* LoginGuestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginGuestModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +142,7 @@
 				D66309E524C878EB00D10AC1 /* SceneDelegate.swift */,
 				D6ADD45D24D36AA00028A82D /* Localizable.strings */,
 				D6ADD46124D36C220028A82D /* Utility */,
+				D6ADD46624D417210028A82D /* Login Guest */,
 				D6402DEE24D359ED00128B04 /* Scan QR */,
 				D6630A1724C87A5C00D10AC1 /* Login */,
 				D66309EC24C878EC00D10AC1 /* Assets.xcassets */,
@@ -178,6 +189,18 @@
 				D6ABB61724C8A37E00C15B85 /* UrlFactory.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		D6ADD46624D417210028A82D /* Login Guest */ = {
+			isa = PBXGroup;
+			children = (
+				D6ADD46B24D421FB0028A82D /* LoginGuestModel.swift */,
+				D6ADD46924D41E9F0028A82D /* LoginGuestService.swift */,
+				D6ADD46724D41A7F0028A82D /* LoginGuestViewModel.swift */,
+				D6ADD46224D416D40028A82D /* LoginGuestViewController.swift */,
+				D6ADD46324D416D40028A82D /* LoginGuestViewController.xib */,
+			);
+			path = "Login Guest";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +311,7 @@
 				D6ADD45B24D36AA00028A82D /* Localizable.strings in Resources */,
 				D6402DED24D3597B00128B04 /* ScanQRViewController.xib in Resources */,
 				D66309F024C878EC00D10AC1 /* LaunchScreen.storyboard in Resources */,
+				D6ADD46524D416D40028A82D /* LoginGuestViewController.xib in Resources */,
 				D66309ED24C878EC00D10AC1 /* Assets.xcassets in Resources */,
 				D6630A1624C879D100D10AC1 /* LoginViewController.xib in Resources */,
 			);
@@ -315,6 +339,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6630A1B24C8829000D10AC1 /* LoginService.swift in Sources */,
+				D6ADD46A24D41E9F0028A82D /* LoginGuestService.swift in Sources */,
+				D6ADD46C24D421FB0028A82D /* LoginGuestModel.swift in Sources */,
+				D6ADD46824D41A7F0028A82D /* LoginGuestViewModel.swift in Sources */,
+				D6ADD46424D416D40028A82D /* LoginGuestViewController.swift in Sources */,
 				D6ABB61824C8A37E00C15B85 /* UrlFactory.swift in Sources */,
 				D6630A1D24C8853600D10AC1 /* LoginModel.swift in Sources */,
 				D6630A1924C87BD800D10AC1 /* LoginViewModel.swift in Sources */,

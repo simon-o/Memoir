@@ -6,6 +6,9 @@
   Copyright © 2020 Antoine Simon. All rights reserved.
 */
 
-// MARK: - SCAN QR
+// MARK: - Scan QR
 "scan_guest_button" = "Login as a Guest";
 "scan_wed_button" = "Login as a newly Wed";
+
+// MARK: - Login Guest
+"login_guest_enter_button" = "Enter Room";
