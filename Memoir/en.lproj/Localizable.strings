@@ -12,3 +12,7 @@
 
 // MARK: - Login Guest
 "login_guest_enter_button" = "Enter Room";
+
+// MARK: - Login as Wed
+"login_login_button" = "Login";
+"login_password_button" = "Reset Password";

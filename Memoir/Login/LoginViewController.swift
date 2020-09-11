@@ -28,9 +28,20 @@ class LoginViewController: UIViewController {
         emailTextfield.text = "antoine.simon.epitech@gmail.com"
         passwordTextfield.text = "aseax45632memoir"
         
+        setUp()
+    }
+    
+    func setUp() {
         cancellable = viewModel.$loginModel.receive(on: DispatchQueue.main)
-            .map {$0?.Id}
-            .assign(to: \.text, on: label)
+        .map {$0?.Id}
+        .assign(to: \.text, on: label)
+        
+        loginButton.setTitle(viewModel.getLoginButtonTitle(), for: .normal)
+        passwordButton.setTitle(viewModel.getPasswordButtonTitle(), for: .normal)
+    }
+    
+    func loginSuccessful() {
+        navigationController?.pushViewController(MainBarViewController(), animated: true)
     }
     
     @IBAction func LoginPressed(_ sender: Any) {
@@ -38,6 +49,6 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func PasswordForgottenPressed(_ sender: Any) {
-        
+        loginSuccessful()
     }
 }

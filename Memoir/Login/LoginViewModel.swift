@@ -31,4 +31,12 @@ class LoginViewModel: ObservableObject {
             }
         })
     }
+    
+    func getLoginButtonTitle() -> String {
+        return "login_login_button".localizedString
+    }
+    
+    func getPasswordButtonTitle() -> String {
+        return "login_password_button".localizedString
+    }
 }

@@ -43,6 +43,5 @@ final class LoginGuestViewModel {
                     self.roomModel = model
                 }
         }
-        
     }
 }
