@@ -14,9 +14,11 @@ class BookViewController: UIViewController {
     private var viewModel = BookViewModel()
     private var cancellable: AnyCancellable?
     private let id: String
+    private let accessToken: String
     
-    init(userID: String) {
+    init(userID: String, accessToken: String) {
         self.id = userID
+        self.accessToken = accessToken
         super.init(nibName: String(describing: BookViewController.self), bundle: nil)
     }
     
@@ -38,6 +40,6 @@ class BookViewController: UIViewController {
     }
     
     func fetchRooms() {
-        viewModel.getRoomsDetails(userID: id)
+        viewModel.getRoomsDetails(userID: id, accessToken: accessToken)
     }
 }

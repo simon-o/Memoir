@@ -18,8 +18,8 @@ class BookViewModel: ObservableObject {
         self.service = service
     }
     
-    func getRoomsDetails(userID: String) {
-        cancellable = service.getRooms(userID: userID).sink(receiveCompletion: { (error) in
+    func getRoomsDetails(userID: String, accessToken: String) {
+        cancellable = service.getRooms(userID: userID, accessToken: accessToken).sink(receiveCompletion: { (error) in
             print(error)
         }, receiveValue: { (result) in
             switch result {
