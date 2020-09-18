@@ -11,9 +11,10 @@
 		2D6CEEAA250B77990064D072 /* MainBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CEEA8250B77990064D072 /* MainBarViewController.xib */; };
 		2D6CEEAD250B78F30064D072 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CEEAB250B78F30064D072 /* BookViewController.swift */; };
 		2D6CEEAE250B78F30064D072 /* BookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CEEAC250B78F30064D072 /* BookViewController.xib */; };
+		2DC64D9F251504E4008B9CBF /* MainBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC64D9E251504E4008B9CBF /* MainBarViewModel.swift */; };
 		2DD23135250B7D2000C4EE7C /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD23134250B7D2000C4EE7C /* BookViewModel.swift */; };
-		2DD23137250B7D7200C4EE7C /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD23136250B7D7200C4EE7C /* BookService.swift */; };
-		2DD23139250B7EA200C4EE7C /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD23138250B7EA200C4EE7C /* BookModel.swift */; };
+		2DD23137250B7D7200C4EE7C /* MediasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD23136250B7D7200C4EE7C /* MediasService.swift */; };
+		2DD23139250B7EA200C4EE7C /* MediasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD23138250B7EA200C4EE7C /* MediasModel.swift */; };
 		D6402DEC24D3597B00128B04 /* ScanQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6402DEA24D3597B00128B04 /* ScanQRViewController.swift */; };
 		D6402DED24D3597B00128B04 /* ScanQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6402DEB24D3597B00128B04 /* ScanQRViewController.xib */; };
 		D6402DF024D35A0400128B04 /* ScanQRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6402DEF24D35A0400128B04 /* ScanQRViewModel.swift */; };
@@ -60,9 +61,10 @@
 		2D6CEEA8250B77990064D072 /* MainBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainBarViewController.xib; sourceTree = "<group>"; };
 		2D6CEEAB250B78F30064D072 /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		2D6CEEAC250B78F30064D072 /* BookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookViewController.xib; sourceTree = "<group>"; };
+		2DC64D9E251504E4008B9CBF /* MainBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBarViewModel.swift; sourceTree = "<group>"; };
 		2DD23134250B7D2000C4EE7C /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
-		2DD23136250B7D7200C4EE7C /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
-		2DD23138250B7EA200C4EE7C /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		2DD23136250B7D7200C4EE7C /* MediasService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediasService.swift; sourceTree = "<group>"; };
+		2DD23138250B7EA200C4EE7C /* MediasModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediasModel.swift; sourceTree = "<group>"; };
 		D6402DEA24D3597B00128B04 /* ScanQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRViewController.swift; sourceTree = "<group>"; };
 		D6402DEB24D3597B00128B04 /* ScanQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanQRViewController.xib; sourceTree = "<group>"; };
 		D6402DEF24D35A0400128B04 /* ScanQRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRViewModel.swift; sourceTree = "<group>"; };
@@ -122,7 +124,10 @@
 		2D6CEEA6250B77090064D072 /* Tab bar */ = {
 			isa = PBXGroup;
 			children = (
+				2DD23138250B7EA200C4EE7C /* MediasModel.swift */,
+				2DD23136250B7D7200C4EE7C /* MediasService.swift */,
 				2D6CEEA7250B77990064D072 /* MainBarViewController.swift */,
+				2DC64D9E251504E4008B9CBF /* MainBarViewModel.swift */,
 				2D6CEEA8250B77990064D072 /* MainBarViewController.xib */,
 			);
 			path = "Tab bar";
@@ -133,8 +138,6 @@
 			children = (
 				2D6CEEAB250B78F30064D072 /* BookViewController.swift */,
 				2DD23134250B7D2000C4EE7C /* BookViewModel.swift */,
-				2DD23138250B7EA200C4EE7C /* BookModel.swift */,
-				2DD23136250B7D7200C4EE7C /* BookService.swift */,
 				2D6CEEAC250B78F30064D072 /* BookViewController.xib */,
 			);
 			path = Book;
@@ -381,7 +384,7 @@
 				D6630A1B24C8829000D10AC1 /* LoginService.swift in Sources */,
 				D6ADD46A24D41E9F0028A82D /* LoginGuestService.swift in Sources */,
 				D6ADD46C24D421FB0028A82D /* LoginGuestModel.swift in Sources */,
-				2DD23139250B7EA200C4EE7C /* BookModel.swift in Sources */,
+				2DD23139250B7EA200C4EE7C /* MediasModel.swift in Sources */,
 				D6ADD46824D41A7F0028A82D /* LoginGuestViewModel.swift in Sources */,
 				D6ADD46424D416D40028A82D /* LoginGuestViewController.swift in Sources */,
 				D6ABB61824C8A37E00C15B85 /* UrlFactory.swift in Sources */,
@@ -392,10 +395,11 @@
 				D6630A1524C879D100D10AC1 /* LoginViewController.swift in Sources */,
 				D6402DF024D35A0400128B04 /* ScanQRViewModel.swift in Sources */,
 				D66309E424C878EB00D10AC1 /* AppDelegate.swift in Sources */,
-				2DD23137250B7D7200C4EE7C /* BookService.swift in Sources */,
+				2DD23137250B7D7200C4EE7C /* MediasService.swift in Sources */,
 				2D6CEEAD250B78F30064D072 /* BookViewController.swift in Sources */,
 				D66309E624C878EB00D10AC1 /* SceneDelegate.swift in Sources */,
 				D6ADD46024D36B480028A82D /* Tools.swift in Sources */,
+				2DC64D9F251504E4008B9CBF /* MainBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

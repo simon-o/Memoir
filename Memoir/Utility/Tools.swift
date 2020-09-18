@@ -13,3 +13,18 @@ extension String {
         return NSLocalizedString(self, comment: "")
     }
 }
+extension UserDefaults {
+    enum Constants {
+        static let userID = "userID"
+        static let token = "token"
+    }
+    
+    func save(token: String, userID: String) {
+        UserDefaults.standard.set(token, forKey: Constants.token)
+        UserDefaults.standard.set(userID, forKey: Constants.userID)
+    }
+    
+    func getTokenAndUserID() -> (String, String) {
+        return (UserDefaults.standard.string(forKey: Constants.token) ?? "", UserDefaults.standard.string(forKey: Constants.userID) ?? "")
+    }
+}

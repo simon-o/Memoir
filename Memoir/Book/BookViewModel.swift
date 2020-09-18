@@ -10,25 +10,25 @@ import Foundation
 import Combine
 
 class BookViewModel: ObservableObject {
-    private let service: BookServiceProtocol
+//    private let service: BookServiceProtocol
     var cancellable: AnyCancellable?
-    @Published var roomModel: RoomDetails?
-    
-    init(service: BookServiceProtocol = BookService()) {
-        self.service = service
-    }
-    
-    func getRoomsDetails(userID: String, accessToken: String) {
-        cancellable = service.getRooms(userID: userID, accessToken: accessToken).sink(receiveCompletion: { (error) in
-            print(error)
-        }, receiveValue: { (result) in
-            switch result {
-            case let .failure(error):
-                print(error)
-            case let .success(model):
-                self.roomModel = model
-            }
-        })
-    }
+//    @Published var roomModel: RoomDetails?
+//    
+//    init(service: BookServiceProtocol = BookService()) {
+//        self.service = service
+//    }
+//    
+//    func getRoomsDetails(userID: String, accessToken: String) {
+//        cancellable = service.getRooms(userID: userID, accessToken: accessToken).sink(receiveCompletion: { (error) in
+//            print(error)
+//        }, receiveValue: { (result) in
+//            switch result {
+//            case let .failure(error):
+//                print(error)
+//            case let .success(model):
+//                self.roomModel = model
+//            }
+//        })
+//    }
 }
 

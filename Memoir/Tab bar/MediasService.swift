@@ -1,5 +1,5 @@
 //
-//  BookService.swift
+//  MediasService.swift
 //  Memoir
 //
 //  Created by Antoine Simon on 11/09/2020.
@@ -9,12 +9,12 @@
 import Foundation
 import Combine
 
-protocol BookServiceProtocol {
+protocol MediasServiceProtocol {
     func getRooms(userID: String, accessToken: String) -> AnyPublisher<Result<RoomDetails, Error>, URLError>
 //    func getRoomDetails(roomID: String) -> AnyPublisher<Result<, Error>, URLError>
 }
 
-class BookService: BookServiceProtocol {
+class MediasService: MediasServiceProtocol {
     func getRooms(userID: String, accessToken: String) -> AnyPublisher<Result<RoomDetails, Error>, URLError> {
         return URLSession.shared.dataTaskPublisher(for: UrlFactory().makeURL(type: .get, apiPath: String(format: apiPath.roomList.rawValue, userID), accessToken: accessToken, parameters: GetRoomsModel(id: "")))
             .map { (data, response) -> Result<RoomDetails, Error> in

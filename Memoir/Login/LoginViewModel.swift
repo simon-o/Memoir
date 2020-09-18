@@ -11,15 +11,30 @@ import Combine
 
 class LoginViewModel: ObservableObject {
     private let service: LoginServiceProtocol
-    var cancellable: AnyCancellable?
+    private let userDefault: UserDefaults
+    var cancellableLoginUser: AnyCancellable?
+    var cancellableSaveToken: AnyCancellable?
     @Published var loginModel: LoginModel?
     
-    init(service: LoginServiceProtocol = LoginService()) {
+    init(service: LoginServiceProtocol = LoginService(), userDefault: UserDefaults = .standard) {
         self.service = service
+        self.userDefault = userDefault
+        
+        cancellableSaveToken = $loginModel.receive(on: DispatchQueue.main)
+            .map {return ($0?.Id ?? "", $0?.Token ?? "") }
+            .sink(receiveValue: { (result) in
+                self.save(token: result.1, userID: result.0)
+            })
+    }
+    
+    private func save(token: String, userID: String) {
+        if !token.isEmpty && !userID.isEmpty {
+            userDefault.save(token: token, userID: userID)
+        }
     }
     
     func loginUser(email: String, password: String) {
-        cancellable = service.loginUser(email: email, password: password).sink(receiveCompletion: { (error) in
+        cancellableLoginUser = service.loginUser(email: email, password: password).sink(receiveCompletion: { (error) in
             print(error)
         }, receiveValue: { (result) in
             switch result {

@@ -7,18 +7,62 @@
 //
 
 import UIKit
+import Combine
 
 class MainBarViewController: UITabBarController {
+    private var viewModel = MainBarViewModel()
+    private var cancellable: AnyCancellable?
+    private var id: String?
+    private var accessToken: String?
+    private let bookView: BookViewController
+    private let userDefault: UserDefaults
+    
+    init(userDefault: UserDefaults = .standard) {
+        self.userDefault = userDefault
+        bookView = BookViewController()
+        super.init(nibName: String(describing: MainBarViewController.self), bundle: nil)
+    }
 
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let view1 = BookViewController(userID: "5f180e45c1e2f947b45e306c", accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjVmMTgwZTQ1YzFlMmY5NDdiNDVlMzA2YyIsInJvbGUiOiJSZWd1bGFyIiwibmJmIjoxNTk5ODM2OTIyLCJleHAiOjE2MzEzNzI5MjIsImlhdCI6MTU5OTgzNjkyMn0.fgCYIWqs_KwaNtpzb8cf2sxhq5HQc1LPcQyFgXkAvFE")
-        view1.tabBarItem = UITabBarItem(title: "BOOK", image: nil, tag: 0)
+        
+        setUp()
+        fetchRooms()
+    }
+    
+    func setUp() {
+        cancellable = viewModel.$roomModel.receive(on: DispatchQueue.main)
+            .sink(receiveValue: { result in
+                self.bookView.loadBook()
+            })
+        
+        cancellable = viewModel.$errorModel.receive(on: DispatchQueue.main)
+            .sink(receiveValue: { result in
+                self.bookView.loadBook()
+            })
+        
+        parseUserInfos()
+        
+        bookView.tabBarItem = UITabBarItem(title: "BOOK", image: nil, tag: 0)
         let view2 = UIViewController()
         view2.view.backgroundColor = .red
         view2.tabBarItem = UITabBarItem(title: "RED", image: nil, tag: 1)
         
-        viewControllers = [view1, view2]
+        viewControllers = [bookView, view2]
+    }
+    
+    private func parseUserInfos() {
+        let result = UserDefaults.standard.getTokenAndUserID()
+        accessToken = result.0
+        id = result.1
+    }
+    
+    func fetchRooms() {
+        guard let id = id, let accessToken = accessToken else { return }
+        viewModel.getRoomsDetails(userID: id, accessToken: accessToken)
     }
 }

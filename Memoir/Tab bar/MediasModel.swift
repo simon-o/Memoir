@@ -11,10 +11,10 @@ import Foundation
 struct RoomDetails: Codable {
     var id: String
     var name: String
-//    var qrSource: String?
-//    var guest: [RoomGuest]
-//    var book: BookDetails
-//    var liveWall: LiveWallDetails
+    var qrSource: String?
+    var guest: [RoomGuest]
+    var book: BookDetails
+    var liveWall: LiveWallDetails
 }
 
 struct RoomGuest: Codable {
