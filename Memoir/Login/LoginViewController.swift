@@ -32,12 +32,29 @@ class LoginViewController: UIViewController {
     }
     
     func setUp() {
-        cancellable = viewModel.$loginModel.receive(on: DispatchQueue.main)
-        .map {$0?.Id}
-        .assign(to: \.text, on: label)
-        
+        initPublish()
         loginButton.setTitle(viewModel.getLoginButtonTitle(), for: .normal)
         passwordButton.setTitle(viewModel.getPasswordButtonTitle(), for: .normal)
+    }
+    
+    func initPublish() {
+        cancellable = viewModel.$roomModel.receive(on: DispatchQueue.main)
+            .sink(receiveValue: { result in
+                if let result = result {
+                    self.loginSuccessful()
+                }
+            })
+        
+        cancellable = viewModel.$errorModel.receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { result in
+                print(result)
+//                print(result?.localizedDescription)
+//                if let result = result {
+//                    display alert
+//                }
+            }, receiveValue: {result in
+                print(result as Any)
+            })
     }
     
     func loginSuccessful() {

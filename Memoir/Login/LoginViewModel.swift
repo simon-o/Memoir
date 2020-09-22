@@ -22,6 +22,16 @@ class LoginViewModel: ObservableObject {
     init(service: LoginServiceProtocol = LoginService(), userDefault: UserDefaults = .standard) {
         self.service = service
         self.userDefault = userDefault
+        
+        cancellableSaveToken = $loginModel.receive(on: DispatchQueue.main)
+            .map {return ($0?.Id ?? "", $0?.Token ?? "") }
+            .sink {result in
+                print(result)
+                if !result.0.isEmpty && !result.1.isEmpty {
+                    self.save(token: result.1, userID: result.0)
+                    self.getRoomsDetails(userID: result.0, accessToken: result.1)
+                }
+        }
     }
     
     private func save(token: String, userID: String) {
@@ -41,7 +51,6 @@ class LoginViewModel: ObservableObject {
             case let .success(model):
                 print("Success \(model)")
                 self.loginModel = model
-                self.loginModel.se
                 }
             })
     }

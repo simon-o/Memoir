@@ -16,6 +16,7 @@ enum Error: Swift.Error {
 
 protocol LoginServiceProtocol {
     func loginUser(email: String, password: String) -> AnyPublisher<Result<LoginModel, Error>, URLError>
+    func getRooms(userID: String, accessToken: String) -> AnyPublisher<Result<RoomDetails, Error>, URLError>
 }
 
 class LoginService: LoginServiceProtocol {
@@ -31,4 +32,17 @@ class LoginService: LoginServiceProtocol {
         .receive(on: DispatchQueue.main)
         .eraseToAnyPublisher()
     }
+    
+    func getRooms(userID: String, accessToken: String) -> AnyPublisher<Result<RoomDetails, Error>, URLError> {
+           return URLSession.shared.dataTaskPublisher(for: UrlFactory().makeURL(type: .get, apiPath: String(format: apiPath.roomList.rawValue, userID), accessToken: accessToken, parameters: GetRoomsModel(id: "")))
+               .map { (data, response) -> Result<RoomDetails, Error> in
+                   if let decoded = try? JSONDecoder().decode(RoomDetails.self, from: data) {
+                       return .success(decoded)
+                   }
+                   // MARK: Need to be replaced with data to send the error message
+                   return .failure(.unknown(response))
+           }
+           .receive(on: DispatchQueue.main)
+           .eraseToAnyPublisher()
+       }
 }
