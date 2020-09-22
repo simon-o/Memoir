@@ -31,20 +31,9 @@ class MainBarViewController: UITabBarController {
         super.viewDidLoad()
         
         setUp()
-        fetchRooms()
     }
     
     func setUp() {
-        cancellable = viewModel.$roomModel.receive(on: DispatchQueue.main)
-            .sink(receiveValue: { result in
-                self.bookView.loadBook()
-            })
-        
-        cancellable = viewModel.$errorModel.receive(on: DispatchQueue.main)
-            .sink(receiveValue: { result in
-                self.bookView.loadBook()
-            })
-        
         parseUserInfos()
         
         bookView.tabBarItem = UITabBarItem(title: "BOOK", image: nil, tag: 0)
@@ -59,10 +48,5 @@ class MainBarViewController: UITabBarController {
         let result = UserDefaults.standard.getTokenAndUserID()
         accessToken = result.0
         id = result.1
-    }
-    
-    func fetchRooms() {
-        guard let id = id, let accessToken = accessToken else { return }
-        viewModel.getRoomsDetails(userID: id, accessToken: accessToken)
     }
 }

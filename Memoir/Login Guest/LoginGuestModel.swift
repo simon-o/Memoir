@@ -9,12 +9,13 @@
 import Foundation
 
 struct RoomModel: Codable {
-    var Id: String
-    var Name: String
-    var QrSource: String
+    var id: String
+    var name: String
+    var qrSource: String
     
 }
 
 struct GetRoomsModel: Encodable {
     var id: String
 }
+

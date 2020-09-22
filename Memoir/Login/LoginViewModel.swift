@@ -14,17 +14,14 @@ class LoginViewModel: ObservableObject {
     private let userDefault: UserDefaults
     var cancellableLoginUser: AnyCancellable?
     var cancellableSaveToken: AnyCancellable?
+    var cancellablegetRooms: AnyCancellable?
     @Published var loginModel: LoginModel?
+    @Published var roomModel: RoomDetails?
+    @Published var errorModel: Error?
     
     init(service: LoginServiceProtocol = LoginService(), userDefault: UserDefaults = .standard) {
         self.service = service
         self.userDefault = userDefault
-        
-        cancellableSaveToken = $loginModel.receive(on: DispatchQueue.main)
-            .map {return ($0?.Id ?? "", $0?.Token ?? "") }
-            .sink(receiveValue: { (result) in
-                self.save(token: result.1, userID: result.0)
-            })
     }
     
     private func save(token: String, userID: String) {
@@ -36,15 +33,30 @@ class LoginViewModel: ObservableObject {
     func loginUser(email: String, password: String) {
         cancellableLoginUser = service.loginUser(email: email, password: password).sink(receiveCompletion: { (error) in
             print(error)
-        }, receiveValue: { (result) in
+            return
+            }, receiveValue: { (result) in
             switch result {
             case let .failure(error):
                 print(error)
             case let .success(model):
                 print("Success \(model)")
                 self.loginModel = model
+                self.loginModel.se
+                }
+            })
+    }
+    
+    private func getRoomsDetails(userID: String, accessToken: String) {
+        cancellablegetRooms = service.getRooms(userID: userID, accessToken: accessToken).sink(receiveCompletion: { (error) in
+            print(error)
+        }, receiveValue: { (result) in
+            switch result {
+            case let .failure(error):
+                self.errorModel = error
+            case let .success(model):
+                self.roomModel = model
             }
-        })
+            })
     }
     
     func getLoginButtonTitle() -> String {

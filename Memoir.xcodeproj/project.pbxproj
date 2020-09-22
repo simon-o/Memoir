@@ -14,7 +14,7 @@
 		2DC64D9F251504E4008B9CBF /* MainBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC64D9E251504E4008B9CBF /* MainBarViewModel.swift */; };
 		2DD23135250B7D2000C4EE7C /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD23134250B7D2000C4EE7C /* BookViewModel.swift */; };
 		2DD23137250B7D7200C4EE7C /* MediasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD23136250B7D7200C4EE7C /* MediasService.swift */; };
-		2DD23139250B7EA200C4EE7C /* MediasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD23138250B7EA200C4EE7C /* MediasModel.swift */; };
+		2DD23139250B7EA200C4EE7C /* RoomsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD23138250B7EA200C4EE7C /* RoomsModel.swift */; };
 		D6402DEC24D3597B00128B04 /* ScanQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6402DEA24D3597B00128B04 /* ScanQRViewController.swift */; };
 		D6402DED24D3597B00128B04 /* ScanQRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6402DEB24D3597B00128B04 /* ScanQRViewController.xib */; };
 		D6402DF024D35A0400128B04 /* ScanQRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6402DEF24D35A0400128B04 /* ScanQRViewModel.swift */; };
@@ -64,7 +64,7 @@
 		2DC64D9E251504E4008B9CBF /* MainBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBarViewModel.swift; sourceTree = "<group>"; };
 		2DD23134250B7D2000C4EE7C /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		2DD23136250B7D7200C4EE7C /* MediasService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediasService.swift; sourceTree = "<group>"; };
-		2DD23138250B7EA200C4EE7C /* MediasModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediasModel.swift; sourceTree = "<group>"; };
+		2DD23138250B7EA200C4EE7C /* RoomsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsModel.swift; sourceTree = "<group>"; };
 		D6402DEA24D3597B00128B04 /* ScanQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRViewController.swift; sourceTree = "<group>"; };
 		D6402DEB24D3597B00128B04 /* ScanQRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanQRViewController.xib; sourceTree = "<group>"; };
 		D6402DEF24D35A0400128B04 /* ScanQRViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRViewModel.swift; sourceTree = "<group>"; };
@@ -124,7 +124,6 @@
 		2D6CEEA6250B77090064D072 /* Tab bar */ = {
 			isa = PBXGroup;
 			children = (
-				2DD23138250B7EA200C4EE7C /* MediasModel.swift */,
 				2DD23136250B7D7200C4EE7C /* MediasService.swift */,
 				2D6CEEA7250B77990064D072 /* MainBarViewController.swift */,
 				2DC64D9E251504E4008B9CBF /* MainBarViewModel.swift */,
@@ -213,6 +212,7 @@
 		D6630A1724C87A5C00D10AC1 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				2DD23138250B7EA200C4EE7C /* RoomsModel.swift */,
 				D6630A1A24C8829000D10AC1 /* LoginService.swift */,
 				D6630A1C24C8853600D10AC1 /* LoginModel.swift */,
 				D6630A1824C87BD800D10AC1 /* LoginViewModel.swift */,
@@ -384,7 +384,7 @@
 				D6630A1B24C8829000D10AC1 /* LoginService.swift in Sources */,
 				D6ADD46A24D41E9F0028A82D /* LoginGuestService.swift in Sources */,
 				D6ADD46C24D421FB0028A82D /* LoginGuestModel.swift in Sources */,
-				2DD23139250B7EA200C4EE7C /* MediasModel.swift in Sources */,
+				2DD23139250B7EA200C4EE7C /* RoomsModel.swift in Sources */,
 				D6ADD46824D41A7F0028A82D /* LoginGuestViewModel.swift in Sources */,
 				D6ADD46424D416D40028A82D /* LoginGuestViewController.swift in Sources */,
 				D6ABB61824C8A37E00C15B85 /* UrlFactory.swift in Sources */,
